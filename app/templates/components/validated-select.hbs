@@ -1,0 +1,17 @@
+{{#if before}}
+  {{#if fieldObj.hasError}}
+    {{yield}}
+  {{/if}}
+{{/if}}
+
+<select>
+  {{#each fieldObj.choices as |choice|}}
+    <option value="{{choice}}">{{choice}}</option>
+  {{/each}}
+</select>
+
+{{#if after}}
+  {{#if fieldObj.hasError}}
+    {{yield}}
+  {{/if}}
+{{/if}}

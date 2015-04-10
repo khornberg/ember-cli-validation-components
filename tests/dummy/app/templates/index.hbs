@@ -1,0 +1,34 @@
+<div>
+  {{#validated-input _id="name" formFields=formFields contentPosition="after" placeholder="Name"}}
+    Only alpha chars
+  {{/validated-input}}
+</div>
+
+<div>
+  {{#validated-input _id="zipCode" formFields=formFields contentPosition="after" placeholder="Zip Code"}}
+    Only numeric chars
+  {{/validated-input}}
+</div>
+
+<div>
+  {{#validated-input _id="age" formFields=formFields contentPosition="after" placeholder="Age"}}
+    You must be under 30 years old
+  {{/validated-input}}
+</div>
+
+<div>
+  Are you cool?
+  {{#validated-checkbox _id="cool" formFields=formFields contentPosition="after"}}
+    You must be cool
+  {{/validated-checkbox}}
+</div>
+
+<div>
+  How much do you love this addon?
+  {{#validated-select _id="love" formFields=formFields contentPosition="after"}}
+    No love at all?
+  {{/validated-select}}
+</div>
+
+<button {{action "submitForm"}}>Submit</button>
+<button {{action "markInvalid"}}>Mark Invalid</button>

@@ -1,0 +1,17 @@
+{{#if before}}
+  {{#if fieldObj.hasError}}
+    {{yield}}
+  {{/if}}
+{{/if}}
+
+{{#if fieldObj.value}}
+  <input id="id" type="checkbox" name="cool" checked>
+{{else}}
+  <input id="id" type="checkbox" name="cool">
+{{/if}}
+
+{{#if after}}
+  {{#if fieldObj.hasError}}
+    {{yield}}
+  {{/if}}
+{{/if}}

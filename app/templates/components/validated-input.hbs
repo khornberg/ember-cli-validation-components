@@ -1,0 +1,46 @@
+{{#if before}}
+  {{#if fieldObj.hasError}}
+    {{yield}}
+  {{/if}}
+{{/if}}
+
+{{input id=_id
+        class=class
+        type="text"
+        value=fieldObj.value
+        action="validateField"
+        on="focus-out"
+        placeholder=placeholder
+        readonly=readonly
+        required=required
+        autofocus=autofocus
+        disabled=disabled
+        size=size
+        tabindex=tabindex
+        maxlength=maxlength
+        name=name
+        min=min
+        max=max
+        pattern=pattern
+        accept=accept
+        autocomplete=autocomplete
+        autosave=autosave
+        formaction=formaction
+        formenctype=formenctype
+        formmethod=formmethod
+        formnovalidate=formnovalidate
+        formtarget=formtarget
+        height=height
+        inputmode=inputmode
+        multiple=multiple
+        step=step
+        width=width
+        form=form
+        selectionDirection=selectionDirection
+        spellcheck=spellcheck}}
+
+{{#if after}}
+  {{#if fieldObj.hasError}}
+    {{yield}}
+  {{/if}}
+{{/if}}
