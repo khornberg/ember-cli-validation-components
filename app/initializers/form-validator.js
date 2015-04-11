@@ -3,9 +3,8 @@ import Ember from 'ember';
 var formValidator = Ember.Object.extend({
   fieldValid: function(field) { return field.validated && !field.hasError; },
 
-  isFormValid: function(formName) {
-    let fields = this.fieldTracker.filterBy("form", formName);
-    if (fields.every(this.fieldValid)) { return true; }
+  isFormValid: function(form) {
+    if (form.every(this.fieldValid)) { return true; }
     return false;
   },
 
@@ -19,14 +18,11 @@ var formValidator = Ember.Object.extend({
     }
   },
 
-  markInvalid: function(formName) {
-    let fields = this.fieldTracker.filterBy("form", formName);
-    fields.forEach( (fieldObj) => {
+  markInvalid: function(form) {
+    form.forEach( (fieldObj) => {
       this.validate(fieldObj);
     });
-  },
-
-  fieldTracker: Ember.A([])
+  }
 });
 
 export function initialize(container, application) {

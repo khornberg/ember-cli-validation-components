@@ -5,7 +5,6 @@ export default Ember.Component.extend({
     let fieldObj = this.formFields.findBy("_id", this._id);
     fieldObj.validated = false;
     fieldObj.hasError = false;
-    this.formValidator.fieldTracker.pushObject(fieldObj);
   }),
 
   after: Ember.computed("", function() {
@@ -35,10 +34,5 @@ export default Ember.Component.extend({
   change: function(e) {
     let currentChoice = e.target.value;
     this.validate(currentChoice);
-  },
-
-  unregisterField: Ember.on("willDestroyElement", function() {
-    let fieldObj = this.formFields.findBy("_id", this._id);
-    this.formValidator.fieldTracker.removeObject(fieldObj);
-  })
+  }
 });
