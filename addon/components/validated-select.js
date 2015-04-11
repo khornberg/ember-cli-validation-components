@@ -35,5 +35,10 @@ export default Ember.Component.extend({
   change: function(e) {
     let currentChoice = e.target.value;
     this.validate(currentChoice);
-  }
+  },
+
+  unregisterField: Ember.on("willDestroyElement", function() {
+    let fieldObj = this.formFields.findBy("_id", this._id);
+    this.formValidator.fieldTracker.removeObject(fieldObj);
+  })
 });
