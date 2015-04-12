@@ -22,20 +22,10 @@ export default Ember.Component.extend({
     return this.formFields.findBy("_id", this._id);
   }),
 
-  validate: function(currentChoice) {
-    let fieldObj = this.get("fieldObj");
-    Ember.set(fieldObj, "value", currentChoice);
-    if (currentChoice.match(this.get("fieldObj").regex)) {
-      Ember.set(fieldObj, "hasError", false);
-      Ember.set(fieldObj, "validated", true);
-    } else {
-      Ember.set(fieldObj, "hasError", true);
-      Ember.set(fieldObj, "validated", true);
-    }
-  },
-
   change: function(e) {
     let currentChoice = e.target.value;
-    this.validate(currentChoice);
+    let fieldObj = this.get("fieldObj");
+    Ember.set(fieldObj, "value", currentChoice);
+    this.formValidator.validate(fieldObj);
   }
 });

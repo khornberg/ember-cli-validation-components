@@ -26,22 +26,11 @@ export default Ember.Component.extend({
     return this.formFields.findBy("_id", this._id);
   }),
 
-  validate: function() {
-    let fieldObj = this.get("fieldObj");
-    if (fieldObj.value.toString().match(fieldObj.regex)) {
-      Ember.set(fieldObj, "hasError", false);
-      Ember.set(fieldObj, "validated", true);
-    } else {
-      Ember.set(fieldObj, "hasError", true);
-      Ember.set(fieldObj, "validated", true);
-    }
-  },
-
   revalidate: function(value) {
     let fieldObj = this.get("fieldObj");
     if (fieldObj.validated === true) {
       Ember.set(fieldObj, "value", value);
-      this.validate();
+      this.formValidator.validate(fieldObj);
     }
   },
 
@@ -50,7 +39,7 @@ export default Ember.Component.extend({
       let fieldObj = this.get("fieldObj");
       if (value === "" && !fieldObj.validated) { return; }
       Ember.set(fieldObj, "value", value);
-      this.validate();
+      this.formValidator.validate(fieldObj);
     }
   }
 });
