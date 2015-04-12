@@ -1,6 +1,7 @@
-import Ember from 'ember';
+import Ember from "ember";
+import validatedBase from "../mixins/validated-base";
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(validatedBase, {
   registerField: Ember.on("init", function() {
     let fieldObj = this.formFields.findBy("_id", this._id);
     fieldObj.validated = false;
@@ -8,18 +9,6 @@ export default Ember.Component.extend({
     if(!fieldObj.hasOwnProperty("value")){
       fieldObj.value = "";
     }
-  }),
-
-  after: Ember.computed("", function() {
-    return this.contentPosition === "after";
-  }),
-
-  before: Ember.computed("", function() {
-    return this.contentPosition === "before";
-  }),
-
-  fieldObj: Ember.computed("", function() {
-    return this.formFields.findBy("_id", this._id);
   }),
 
   change: function(e) {
