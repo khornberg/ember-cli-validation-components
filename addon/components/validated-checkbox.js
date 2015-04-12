@@ -5,6 +5,9 @@ export default Ember.Component.extend({
     let fieldObj = this.formFields.findBy("_id", this._id);
     fieldObj.validated = false;
     fieldObj.hasError = false;
+    if(!fieldObj.hasOwnProperty("value")){
+      fieldObj.value = false;
+    }
   }),
 
   after: Ember.computed("", function() {
