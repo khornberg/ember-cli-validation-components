@@ -15,6 +15,6 @@ export default Ember.Component.extend(validatedBase, {
     let currentChoice = e.target.value;
     let fieldObj = this.get("fieldObj");
     Ember.set(fieldObj, "value", currentChoice);
-    this.formValidator.validate(fieldObj);
+    this.formValidator._validate(fieldObj);
   }
 });

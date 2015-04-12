@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Ember from "ember";
 import validatedBase from "../mixins/validated-base";
 
 export default Ember.Component.extend(validatedBase, {
@@ -14,6 +14,6 @@ export default Ember.Component.extend(validatedBase, {
   change: function() {
     let fieldObj = this.get("fieldObj");
     Ember.set(fieldObj, "value", !fieldObj.value);
-    this.formValidator.validate(fieldObj);
+    this.formValidator._validate(fieldObj);
   }
 });

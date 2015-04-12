@@ -1,10 +1,9 @@
-import Ember from 'ember';
+import Ember from "ember";
 
 var formValidator = Ember.Object.extend({
-  fieldValid: function(field) { return field.validated && !field.hasError; },
 
   isFormValid: function(form) {
-    if (form.every(this.fieldValid)) { return true; }
+    if (form.every(this._fieldValid)) { return true; }
     return false;
   },
 
@@ -16,7 +15,13 @@ var formValidator = Ember.Object.extend({
     return theData;
   },
 
-  validate: function(fieldObj) {
+  markInvalid: function(form) {
+    form.forEach( (fieldObj) => {
+      this._validate(fieldObj);
+    });
+  },
+
+  _validate: function(fieldObj) {
     if (fieldObj.value.toString().match(fieldObj.regex)) {
       Ember.set(fieldObj, "hasError", false);
       Ember.set(fieldObj, "validated", true);
@@ -26,11 +31,7 @@ var formValidator = Ember.Object.extend({
     }
   },
 
-  markInvalid: function(form) {
-    form.forEach( (fieldObj) => {
-      this.validate(fieldObj);
-    });
-  }
+  _fieldValid: function(field) { return field.validated && !field.hasError; }
 });
 
 export function initialize(container, application) {
