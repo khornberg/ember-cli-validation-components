@@ -8,6 +8,14 @@ var formValidator = Ember.Object.extend({
     return false;
   },
 
+  formData: function(form) {
+    var theData = Ember.Object.create({});
+    form.forEach(function(formObj) {
+      theData[formObj._id] = formObj.value;
+    });
+    return theData;
+  },
+
   validate: function(fieldObj) {
     if (fieldObj.value.toString().match(fieldObj.regex)) {
       Ember.set(fieldObj, "hasError", false);

@@ -164,3 +164,33 @@ test("markInvalid does not set error when all fields match their regex", functio
     assert.ok(!find("#loveError").length);
   });
 });
+
+test("formData returns the expected object with the correct current values", function(assert) {
+  var dummyConsoleLog = Ember.A([]);
+  var monkeyConsole = function(theString) {
+    dummyConsoleLog.pushObject(theString);
+  };
+  console.log = monkeyConsole;
+  visit("/");
+  click("#name");
+  fillIn("#name", "Jarrod");
+  andThen(function() {
+    find("#name").focusout();
+  });
+  click("#zipCode");
+  fillIn("#zipCode", "123");
+  andThen(function() {
+    find("#zipCode").focusout();
+  });
+  click("#cool");
+  fillIn("#love", "Lots");
+  click("#formData");
+  andThen(function() {
+    assert.equal(dummyConsoleLog.length, 1);
+    assert.equal(Ember.keys(dummyConsoleLog[0]).length, 4);
+    assert.equal(dummyConsoleLog[0].name, "Jarrod");
+    assert.equal(dummyConsoleLog[0].love, "Lots");
+    assert.equal(dummyConsoleLog[0].cool, true);
+    assert.equal(dummyConsoleLog[0].zipCode, "123");
+  });
+});

@@ -22,6 +22,10 @@ export default Ember.Controller.extend({
 
     markInvalid: function() {
       this.get("formValidator").markInvalid(this.get("formFields"));
+    },
+
+    formData: function() {
+      console.log(this.get("formValidator").formData(this.get("formFields")));
     }
   }
 });
