@@ -1,7 +1,7 @@
 # Ember-cli-validation-components
 *Easy to use input components to manage all your form validation needs*
 
-This ember-cli addon adds three validated input components `input`,
+This ember-cli addon provides three validated input components `input`,
 `select` and `checkbox` plus a service with several convenience functions to your
 app. These easy to use components make form validation easy and dare I say *almost* fun.
 
