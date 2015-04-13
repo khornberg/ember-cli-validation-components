@@ -11,12 +11,12 @@
     "build": "ember build",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": "https://github.com/JarrodCTaylor/ember-cli-validation-components",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
-  "license": "WFTPL",
+  "author": "Jarrod C Taylor",
+  "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
     "ember-cli": "0.2.3",
@@ -34,7 +34,10 @@
     "ember-try": "0.0.4"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "ember",
+    "ember-cli",
+    "validation"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.0.0"
