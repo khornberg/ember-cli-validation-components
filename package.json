@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-validation-components",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.1.0",
+  "description": "Easy to use input components to manage all your form validation needs",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -16,7 +16,7 @@
     "node": ">= 0.10.0"
   },
   "author": "",
-  "license": "MIT",
+  "license": "WFTPL",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
     "ember-cli": "0.2.3",
