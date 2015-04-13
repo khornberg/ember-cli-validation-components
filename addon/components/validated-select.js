@@ -11,6 +11,14 @@ export default Ember.Component.extend(validatedBase, {
     }
   }),
 
+  defaultChoice: Ember.computed(function() {
+    return this.get("fieldObj").choices[0];
+  }),
+
+  remainingChoices: Ember.computed(function() {
+    return Ember.A(this.get("fieldObj").choices.slice(1, 100));
+  }),
+
   change: function(e) {
     let currentChoice = e.target.value;
     let fieldObj = this.get("fieldObj");

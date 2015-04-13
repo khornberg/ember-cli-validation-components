@@ -5,7 +5,8 @@
 {{/if}}
 
 <select id="{{_id}}">
-  {{#each fieldObj.choices as |choice|}}
+  <option value="{{defaultChoice}}" selected="selected">{{defaultChoice}}</option>
+  {{#each remainingChoices as |choice|}}
     <option value="{{choice}}">{{choice}}</option>
   {{/each}}
 </select>
