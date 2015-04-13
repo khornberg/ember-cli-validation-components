@@ -30,7 +30,7 @@ form: Ember.A([
 
 **Gives you this:**
 
-![validation.gif](https://bitbucket.org/repo/9ybLej/images/1997957016-validation.gif)
+![validation](https://cloud.githubusercontent.com/assets/4416952/7115973/31a82c6a-e1b3-11e4-9402-667cbab38d82.gif)
 
 ## Sign Me Up Already! (Installation)
 
