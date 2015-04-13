@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
 
   actions: {
     formValid: function() {
-      if (this.get("formValidator").isFormValid(this.get("formFields"))) {
+      if (this.get("formValidator").isValid(this.get("formFields"))) {
         console.log("The form IS valid");
       } else {
         console.log("The form is NOT valid");

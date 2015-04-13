@@ -86,6 +86,6 @@ formValidator: Ember.inject.service("formValidator")
 
 ### Form Validation Functions
 
-- [isFormValid (Boolean are all form fields valid)](https://google.com)
+- [isValid (Boolean are all form fields valid)](https://google.com)
 - [markInvalid (Display errors for all invalid form fields)](https://google.com)
 - [formData (Return an object containing all fields and values from the form)](https://google.com)

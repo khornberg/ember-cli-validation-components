@@ -2,7 +2,7 @@ import Ember from "ember";
 
 export default Ember.Service.extend({
 
-  isFormValid: function(form) {
+  isValid: function(form) {
     if (form.every(this._fieldValid)) { return true; }
     return false;
   },
