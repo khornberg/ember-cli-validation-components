@@ -85,12 +85,12 @@ formValidator: Ember.inject.service("formValidator")
 
 ### Component Examples
 
-- [Text Input](https://google.com)
-- [Select Box](https://google.com)
-- [Check Box](https://google.com)
+- [Text Input](https://github.com/JarrodCTaylor/ember-cli-validation-components/wiki/Text-Input)
+- [Select Box](https://github.com/JarrodCTaylor/ember-cli-validation-components/wiki/Select-Input)
+- [Check Box](https://github.com/JarrodCTaylor/ember-cli-validation-components/wiki/Checkbox)
 
 ### Form Validation Functions
 
-- [isValid (Boolean are all form fields valid)](https://google.com)
-- [markInvalid (Display errors for all invalid form fields)](https://google.com)
-- [formData (Return an object containing all fields and values from the form)](https://google.com)
+- [isValid (Boolean are all form fields valid)](https://github.com/JarrodCTaylor/ember-cli-validation-components/wiki/isValid-Function)
+- [markInvalid (Display errors for all invalid form fields)](https://github.com/JarrodCTaylor/ember-cli-validation-components/wiki/markInvalid)
+- [formData (Return an object containing all fields and values from the form)](https://github.com/JarrodCTaylor/ember-cli-validation-components/wiki/formData)
