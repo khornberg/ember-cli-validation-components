@@ -1,12 +1,12 @@
 # Ember-cli-validation-components
 *Easy to use input components to manage all your form validation needs*
 
-This ember-cli addon adds a three validated input components [`input`,
-`select`, `checkbox`] plus a service with several convenience functions to your
+This ember-cli addon adds three validated input components `input`,
+`select` and `checkbox` plus a service with several convenience functions to your
 app. These easy to use components make form validation easy and dare I say *almost* fun.
 
-## How easy is it you ask
-**This**
+## How Easy Is It?
+**This:**
 
 ``` javascript
 // controllers/index.js
@@ -16,7 +16,7 @@ form: Ember.A([
 ])
 ```
 
-**Plus this**
+**Plus this:**
 ``` handlebars
 <!-- templates/index.hbs -->
 {{#validated-input _id="name" formFields=form contentPosition="after" placeholder="Name"}}
@@ -28,7 +28,8 @@ form: Ember.A([
 {{/validated-input}}
 ```
 
-**Gives you this**
+**Gives you this:**
+
 ![validation.gif](https://bitbucket.org/repo/9ybLej/images/1997957016-validation.gif)
 
 ## Sign Me Up Already! (Installation)
@@ -46,9 +47,10 @@ ember install:addon ember-cli-validation-components
 ```
 
 ## Service Defaults
-By default the service is injected into all `Controllers`, `Routes`, `Views` and
-`Components`.  However, this behavior if fully configurable. You can even
-lazily injected the service with `Ember.inject.service("formValidator")`.
+By default the service is injected into all `Controllers`, `Routes`, `Views`
+and `Components`.  However, this behavior is fully configurable. You can even
+disable auto injection completely and lazily inject the service with
+`Ember.inject.service("formValidator")`.
 
 In `config/environment.js`, you can override service defaults in the
 `formValidatorDefaults` object:
