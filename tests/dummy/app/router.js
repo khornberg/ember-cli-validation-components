@@ -6,5 +6,6 @@ var Router = Ember.Router.extend({
 });
 
 export default Router.map(function() {
-  this.route("index", {path: "/"});
+  this.route("form-one", {path: "/form-one"});
+  this.route("form-two", {path: "/form-two"});
 });

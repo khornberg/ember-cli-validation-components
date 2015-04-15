@@ -22,7 +22,9 @@ export default Ember.Component.extend(validatedBase, {
   change: function(e) {
     let currentChoice = e.target.value;
     let fieldObj = this.get("fieldObj");
+    let formFields = this.get("formFields");
+    let formData = this.get("formValidator").formData(formFields);
     Ember.set(fieldObj, "value", currentChoice);
-    this.formValidator._validate(fieldObj);
+    this.formValidator._validate(fieldObj, formData);
   }
 });

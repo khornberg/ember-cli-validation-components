@@ -17,12 +17,17 @@ export default Ember.Service.extend({
 
   markInvalid: function(form) {
     form.forEach( (fieldObj) => {
-      this._validate(fieldObj);
+      this._validate(fieldObj, this.get("formData")(form));
     });
   },
 
-  _validate: function(fieldObj) {
-    if (fieldObj.value.toString().match(fieldObj.regex)) {
+  _validate: function(fieldObj, formData) {
+    let regexBool = fieldObj.value.toString().match(fieldObj.regex);
+    let valFunction = true;
+    if (fieldObj.valFunction) {
+      valFunction = fieldObj.valFunction(formData);
+    }
+    if (regexBool && valFunction) {
       Ember.set(fieldObj, "hasError", false);
       Ember.set(fieldObj, "validated", true);
     } else {

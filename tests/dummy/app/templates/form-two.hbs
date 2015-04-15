@@ -1,0 +1,14 @@
+<div>
+  Select card type
+  {{#validated-select _id="cardType" formFields=formFields contentPosition="after"}}
+    <div id="cardError">You have to use a card</div>
+  {{/validated-select}}
+</div>
+
+<div>
+  {{#validated-input _id="securityCode" formFields=formFields contentPosition="after" placeholder="Security Code"}}
+    <div id="codeError">Invlid security code</div>
+  {{/validated-input}}
+</div>
+
+<button id="submitForm" {{action "submitForm"}}>Submit Form</button>

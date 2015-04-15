@@ -17,18 +17,22 @@ export default Ember.Component.extend(validatedBase, {
 
   revalidate: function(value) {
     let fieldObj = this.get("fieldObj");
+    let formFields = this.get("formFields");
+    let formData = this.get("formValidator").formData(formFields);
     if (fieldObj.validated === true) {
       Ember.set(fieldObj, "value", value);
-      this.formValidator._validate(fieldObj);
+      this.formValidator._validate(fieldObj, formData);
     }
   },
 
   actions: {
     validateField: function(value) {
       let fieldObj = this.get("fieldObj");
+      let formFields = this.get("formFields");
+      let formData = this.get("formValidator").formData(formFields);
       if (value === "" && !fieldObj.validated) { return; }
       Ember.set(fieldObj, "value", value);
-      this.formValidator._validate(fieldObj);
+      this.formValidator._validate(fieldObj, formData);
     }
   }
 });
