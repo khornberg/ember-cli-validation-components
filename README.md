@@ -100,4 +100,4 @@ formValidator: Ember.inject.service("formValidator")
 
 ### Custom Field Validators (Other than regex)
 
-- [Custom validation](https://github.com/JarrodCTaylor/ember-cli-validation-components/wiki/Csutom-field-vlidators)
+- [Custom validation](https://github.com/JarrodCTaylor/ember-cli-validation-components/wiki/Custom-field-validators)
