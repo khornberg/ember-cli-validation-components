@@ -1,7 +1,8 @@
 # Ember-cli-validation-components
 *Easy to use input components to manage all your form validation needs*
 
-[![Build Status](https://travis-ci.org/JarrodCTaylor/ember-cli-validation-components.svg?branch=0.1.0)](https://travis-ci.org/JarrodCTaylor/ember-cli-validation-components) [![npm version](https://badge.fury.io/js/ember-cli-validation-components.svg)](http://badge.fury.io/js/ember-cli-validation-components)
+[![Build Status](https://travis-ci.org/JarrodCTaylor/ember-cli-validation-components.svg?branch=master)](https://travis-ci.org/JarrodCTaylor/ember-cli-validation-components) [![npm version](https://badge.fury.io/js/ember-cli-validation-components.svg)](http://badge.fury.io/js/ember-cli-validation-components) [![Code Climate](https://codeclimate.com/github/JarrodCTaylor/ember-cli-validation-components/badges/gpa.svg)](https://codeclimate.com/github/JarrodCTaylor/ember-cli-validation-components)
+
 
 This ember-cli addon provides three validated input components `input`,
 `select` and `checkbox` plus a service with several convenience functions to your
