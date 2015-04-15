@@ -97,3 +97,7 @@ formValidator: Ember.inject.service("formValidator")
 - [isValid (Boolean are all form fields valid)](https://github.com/JarrodCTaylor/ember-cli-validation-components/wiki/isValid-Function)
 - [markInvalid (Display errors for all invalid form fields)](https://github.com/JarrodCTaylor/ember-cli-validation-components/wiki/markInvalid)
 - [formData (Return an object containing all fields and values from the form)](https://github.com/JarrodCTaylor/ember-cli-validation-components/wiki/formData)
+
+### Custom Field Validators (Other than regex)
+
+- [Custom validation](https://github.com/JarrodCTaylor/ember-cli-validation-components/wiki/Csutom-field-vlidators)
