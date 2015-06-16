@@ -3,12 +3,13 @@ import validatedBase from "../mixins/validated-base";
 
 export default Ember.Component.extend(validatedBase, {
   registerField: Ember.on("init", function() {
-    let fieldObj = this.formFields.findBy("_id", this._id);
+    let fieldObj = this.getAttr('formFields').findBy("_id", this.attrs._id);
     fieldObj.validated = false;
     fieldObj.hasError = false;
     if(!fieldObj.hasOwnProperty("value")){
       fieldObj.value = "";
     }
+    this.set('fieldObj', fieldObj);
   }),
 
   keyUp: function(e) {
@@ -17,7 +18,7 @@ export default Ember.Component.extend(validatedBase, {
 
   revalidate: function(value) {
     let fieldObj = this.get("fieldObj");
-    let formFields = this.get("formFields");
+    let formFields = this.getAttr('formFields');
     let formData = this.get("formValidator").formData(formFields);
     if (fieldObj.validated === true) {
       Ember.set(fieldObj, "value", value);
@@ -28,7 +29,7 @@ export default Ember.Component.extend(validatedBase, {
   actions: {
     validateField: function(value) {
       let fieldObj = this.get("fieldObj");
-      let formFields = this.get("formFields");
+      let formFields = this.getAttr('formFields');
       let formData = this.get("formValidator").formData(formFields);
       if (value === "" && !fieldObj.validated) { return; }
       Ember.set(fieldObj, "value", value);

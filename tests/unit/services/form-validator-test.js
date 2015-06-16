@@ -25,7 +25,7 @@ test("isValid returns false under expected conditions", function(assert) {
   assert.ok(!validator.isValid(form));
 });
 
-test("marInvalid invalidates field that have values that do not match the regex", function(assert) {
+test("markInvalid invalidates field that have values that do not match the regex", function(assert) {
   let validator = new formValidator();
   let form = Ember.A([
     {_id: "a", value: "A", regex: /^$/, validated: false, hasError: false},
