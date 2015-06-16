@@ -37,18 +37,10 @@ form: Ember.A([
 
 ## Sign Me Up Already! (Installation)
 
-**NOTE:** This add requires Ember version 1.11.1 or higher.
-
-For Ember CLI >= `0.2.3`:
+**NOTE:** This add requires Ember version 1.13.1 or higher.
 
 ``` shell
 ember install ember-cli-validation-components
-```
-
-For Ember CLI < `0.2.3`:
-
-``` shell
-ember install:addon ember-cli-validation-components
 ```
 
 ## Service Defaults
