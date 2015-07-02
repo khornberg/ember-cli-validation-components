@@ -6,7 +6,7 @@
 
 <select id="{{_id}}">
   <option value="{{defaultChoice}}" selected="selected">{{defaultChoice}}</option>
-  {{#each remainingChoices key="@guid" as |choice|}}
+  {{#each remainingChoices as |choice|}}
     <option value="{{choice}}">{{choice}}</option>
   {{/each}}
 </select>
