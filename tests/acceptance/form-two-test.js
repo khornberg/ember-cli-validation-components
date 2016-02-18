@@ -1,17 +1,7 @@
-import Ember from "ember";
-import { module, test } from "qunit";
-import startApp from "dummy/tests/helpers/start-app";
+import { test } from "qunit";
+import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
 
-var application;
-
-module("Form One Route Tests", {
-  beforeEach: function() {
-    application = startApp();
-  },
-  afterEach: function() {
-    Ember.run(application, "destroy");
-  }
-});
+moduleForAcceptance("Acceptance | Form One Route Tests");
 
 test("Fields with valFunctions trigger errors as expected", function(assert) {
   visit("/form-two");

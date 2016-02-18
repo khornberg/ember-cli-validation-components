@@ -43,37 +43,12 @@ form: Ember.A([
 ember install ember-cli-validation-components
 ```
 
-## Service Defaults
-By default the service is injected into all `Controllers`, `Routes`, `Views`
-and `Components`.  However, this behavior is fully configurable. You can even
-disable auto injection completely and lazily inject the service with
-`Ember.inject.service("formValidator")`.
+## Service Injection
 
-In `config/environment.js` you can override the addons service defaults by modifying the
-`formValidatorDefaults` object:
+Injecting the service can be accomplished with a single line.
 
 ```javascript
-module.exports = function(environment) {
-  var ENV = {
-    formValidatorDefaults: {
-      injectionFactories: ['route', 'controller', 'view', 'component']
-    }
-  }
-}
-```
-
-The key `injectionFactories` lets you choose which factories the service
-injects itself into.  For example if you only need to access the
-`formValidator` service from inside `controllers`, you would change the
-`injectionFactories` property to `['controller']`. This works with any valid
-registry name on the container. So you could do any combination of the
-following: `['component:fizz']` `['controller:buzz']` `['route:fizzbuzz']`.
-
-Optionally you could set the `injectionFactories` to be empty and inject the
-service manually on any `Ember.Object` registered in the container like so:
-
-```javascript
-formValidator: Ember.inject.service("formValidator")
+formValidator: Ember.inject.service()
 ```
 
 ## The Details

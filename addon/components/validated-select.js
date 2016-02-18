@@ -2,6 +2,8 @@ import Ember from "ember";
 import validatedBase from "../mixins/validated-base";
 
 export default Ember.Component.extend(validatedBase, {
+  formValidator: Ember.inject.service(),
+
   registerField: Ember.on("init", function() {
     let fieldObj = this.getAttr('formFields').findBy("_id", this.attrs._id);
     fieldObj.validated = false;
@@ -26,6 +28,6 @@ export default Ember.Component.extend(validatedBase, {
     let formFields = this.getAttr('formFields');
     let formData = this.get("formValidator").formData(formFields);
     Ember.set(fieldObj, "value", currentChoice);
-    this.formValidator._validate(fieldObj, formData);
+    this.get("formValidator")._validate(fieldObj, formData);
   }
 });
