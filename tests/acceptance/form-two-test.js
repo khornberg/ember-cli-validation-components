@@ -1,7 +1,7 @@
 import { test } from "qunit";
 import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
 
-moduleForAcceptance("Acceptance | Form One Route Tests");
+moduleForAcceptance("Acceptance | Form Two Route Tests");
 
 test("Fields with valFunctions trigger errors as expected", function(assert) {
   visit("/form-two");

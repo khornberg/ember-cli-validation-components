@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/JarrodCTaylor/ember-cli-validation-components.svg?branch=master)](https://travis-ci.org/JarrodCTaylor/ember-cli-validation-components) [![npm version](https://badge.fury.io/js/ember-cli-validation-components.svg)](http://badge.fury.io/js/ember-cli-validation-components) [![Code Climate](https://codeclimate.com/github/JarrodCTaylor/ember-cli-validation-components/badges/gpa.svg)](https://codeclimate.com/github/JarrodCTaylor/ember-cli-validation-components)
 
 
-This ember-cli addon provides three validated input components `input`,
+This ember-cli addon provides four validated input components `input`, `input-mask`,
 `select` and `checkbox` plus a service with several convenience functions to your
 app. These easy to use components make form validation easy and dare I say *almost* fun.
 
@@ -56,6 +56,7 @@ formValidator: Ember.inject.service()
 ### Component Examples
 
 - [Text Input](https://github.com/JarrodCTaylor/ember-cli-validation-components/wiki/Text-Input)
+- [Text Masked Input](https://github.com/JarrodCTaylor/ember-cli-validation-components/wiki/Text-Masked-Input)
 - [Select Box](https://github.com/JarrodCTaylor/ember-cli-validation-components/wiki/Select-Input)
 - [Check Box](https://github.com/JarrodCTaylor/ember-cli-validation-components/wiki/Checkbox)
 

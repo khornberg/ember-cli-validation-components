@@ -1,0 +1,10 @@
+<div>
+  {{#validated-input-mask
+    _id="startDate"
+    formFields=formFields
+    contentPosition="after"
+    mask="99/99/9999"
+    placeholder="Start Date"}}
+    <div id="codeError">Date must have format of: MM/DD/YYYY</div>
+  {{/validated-input-mask}}
+</div>
