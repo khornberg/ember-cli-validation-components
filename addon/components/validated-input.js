@@ -5,7 +5,7 @@ export default Ember.Component.extend(validatedBase, {
   formValidator: Ember.inject.service(),
 
   registerField: Ember.on("init", function() {
-    let fieldObj = this.getAttr('formFields').findBy("_id", this.attrs._id);
+    let fieldObj = this.get('formFields').findBy("_id", this.get('_id'));
     fieldObj.validated = false;
     fieldObj.hasError = false;
     if(!fieldObj.hasOwnProperty("value")){
@@ -20,7 +20,7 @@ export default Ember.Component.extend(validatedBase, {
 
   revalidate: function(value) {
     let fieldObj = this.get("fieldObj");
-    let formFields = this.getAttr('formFields');
+    let formFields = this.get('formFields');
     let formData = this.get("formValidator").formData(formFields);
     if (fieldObj.validated === true) {
       Ember.set(fieldObj, "value", value);
@@ -31,7 +31,7 @@ export default Ember.Component.extend(validatedBase, {
   actions: {
     validateField: function(value) {
       let fieldObj = this.get("fieldObj");
-      let formFields = this.getAttr('formFields');
+      let formFields = this.get('formFields');
       let formData = this.get("formValidator").formData(formFields);
       if (value === "" && !fieldObj.validated) { return; }
       Ember.set(fieldObj, "value", value);
