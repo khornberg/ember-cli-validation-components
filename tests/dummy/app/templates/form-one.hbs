@@ -24,6 +24,13 @@
   {{/validated-select}}
 </div>
 
+<div>
+  How do you feel about placeholders?
+  {{#validated-select _id="placeholder" formFields=formFields contentPosition="after" placeholder="I love them"}}
+    <div id="liar">Yes you do</div>
+  {{/validated-select}}
+</div>
+
 <button id="formValid" {{action "formValid"}}>Form Valid?</button>
 <button id="markInvalid" {{action "markInvalid"}}>Mark Invalid</button>
 <button id="formData" {{action "formData"}}>Log Form Data</button>

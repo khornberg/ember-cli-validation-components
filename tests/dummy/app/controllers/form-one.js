@@ -5,10 +5,11 @@ export default Ember.Controller.extend({
   init: function() {
     // Tests carry state if this is not defined in init
     this.set("formFields", Ember.A([
-    {_id: "name"   , regex: /^[A-Za-z]+$/},
-    {_id: "zipCode", regex: /^\d+$/},
-    {_id: "cool"   , regex: /true/},
-    {_id: "love"   , regex: /Lots|Some/, choices: Ember.A(["----", "Lots", "Some", "None"])}]));
+    {_id: "name",        regex: /^[A-Za-z]+$/},
+    {_id: "zipCode",     regex: /^\d+$/},
+    {_id: "cool",        regex: /true/},
+    {_id: "love",        regex: /Lots|Some/, choices: Ember.A(["----", "Lots", "Some", "None"])},
+    {_id: "placeholder", regex: /none/,      choices: Ember.A(["I don't love them", ])}]));
   },
 
   actions: {

@@ -54,3 +54,11 @@ test("Select field does display an error if selected field does not matche regex
   fillIn("#love", "None");
   andThen(function() { assert.ok(find("#loveError").length); });
 });
+
+test("Select field with placeholder selects it as a disabled option", function(assert) {
+  visit("/form-one");
+  andThen(function() {
+    assert.ok(find("#validated-select-placeholder").is(':selected'));
+    assert.ok(find("#validated-select-placeholder").is(':disabled'));
+  });
+});

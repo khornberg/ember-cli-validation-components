@@ -15,10 +15,12 @@ export default Ember.Component.extend(validatedBase, {
   }),
 
   defaultChoice: Ember.computed(function() {
+    if (this.get('placeholder')) { return; }
     return this.get("fieldObj").choices[0];
   }),
 
   remainingChoices: Ember.computed(function() {
+    if (this.get('placeholder')) { return Ember.A(this.get("fieldObj").choices); }
     return Ember.A(this.get("fieldObj").choices.slice(1, 100));
   }),
 
