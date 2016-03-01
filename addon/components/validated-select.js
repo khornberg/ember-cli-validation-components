@@ -6,10 +6,10 @@ export default Ember.Component.extend(validatedBase, {
 
   registerField: Ember.on("init", function() {
     let fieldObj = this.get('formFields').findBy("_id", this.get('_id'));
-    fieldObj.validated = false;
-    fieldObj.hasError = false;
+    Ember.set(fieldObj, "validated", false);
+    Ember.set(fieldObj, "hasError", false);
     if(!fieldObj.hasOwnProperty("value")){
-      fieldObj.value = "";
+      Ember.set(fieldObj, "value", "");
     }
     this.set('fieldObj', fieldObj);
   }),
