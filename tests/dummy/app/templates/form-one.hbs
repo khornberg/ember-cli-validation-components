@@ -5,6 +5,13 @@
 </div>
 
 <div>
+  {{#validated-textarea _id="description" formFields=formFields contentPosition="after" placeholder="Description"}}
+    <div id="descriptionError">Only alpha chars</div>
+  {{/validated-textarea}}
+</div>
+
+
+<div>
   {{#validated-input _id="zipCode" formFields=formFields contentPosition="after" placeholder="Zip Code"}}
     <div id="zipError">Only numeric chars</div>
   {{/validated-input}}
