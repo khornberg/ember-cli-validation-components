@@ -1,0 +1,32 @@
+{{#if before}}
+  {{#if fieldObj.hasError}}
+    {{yield}}
+  {{/if}}
+{{/if}}
+
+{{textarea id=_id
+        class=_class
+        value=fieldObj.value
+        focus-out="validateField"
+        name=name
+        rows=rows
+        cols=cols
+        placeholder=placeholder
+        disabled=disabled
+        maxlength=maxlength
+        tabindex=tabindex
+        selectionEnd=selectionEnd
+        selectionStart=selectionStart
+        selectionDirection=selectionDirection
+        wrap=wrap
+        readonly=readonly
+        autofocus=autofocus
+        form=form
+        spellcheck=spellcheck
+        required=required}}
+
+{{#if after}}
+  {{#if fieldObj.hasError}}
+    {{yield}}
+  {{/if}}
+{{/if}}
