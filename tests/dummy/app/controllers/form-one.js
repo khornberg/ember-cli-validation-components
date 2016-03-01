@@ -6,6 +6,7 @@ export default Ember.Controller.extend({
     // Tests carry state if this is not defined in init
     this.set("formFields", Ember.A([
     {_id: "name",        regex: /^[A-Za-z]+$/},
+    {_id: "description", regex: /^[A-Za-z]+$/},
     {_id: "zipCode",     regex: /^\d+$/},
     {_id: "cool",        regex: /true/},
     {_id: "love",        regex: /Lots|Some/, choices: Ember.A(["----", "Lots", "Some", "None"])},

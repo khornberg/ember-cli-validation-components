@@ -30,6 +30,33 @@ test("Input field will update error status as keys are pressed after initial err
   andThen(function() { assert.ok(!find("#nameError").length); });
 });
 
+test("Textarea field does not display an error if it contains invalid textarea but has not lost focus", function(assert) {
+  visit("/form-one");
+  click("#description");
+  fillIn("#description", "This is a b4d descr1ption");
+  andThen(function() {
+    assert.ok(!find("#descriptionError").length);
+  });
+});
+
+test("Textarea field does display an error if it contains invalid textarea and has lost focus", function(assert) {
+  visit("/form-one");
+  click("#description");
+  fillIn("#description", "This is a b4d descr1ption");
+  andThen(function() { find("#description").focusout(); });
+  andThen(function() { assert.ok(find("#descriptionError").length); });
+});
+
+test("Textarea field will update error status as keys are pressed after initial error has been triggered", function(assert) {
+  visit("/form-one");
+  click("#description");
+  fillIn("#description", "This is a b4d descr1ption");
+  andThen(function() { find("#name").focusout(); });
+  fillIn("#description", "This is a good description");
+  andThen(function() { find("#name").keyup(); });
+  andThen(function() { assert.ok(!find("#descriptionError").length); });
+});
+
 test("Checkbox field does not display an error if checked and expected to be true", function(assert) {
   visit("/form-one");
   click("#cool");
