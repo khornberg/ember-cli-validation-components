@@ -4,8 +4,12 @@
   {{/if}}
 {{/if}}
 
-<select id="{{_id}}">
-  <option value="{{defaultChoice}}" selected="selected">{{defaultChoice}}</option>
+<select id="{{_id}}" class="{{_class}}">
+  {{#if placeholder}}
+    <option id="validated-select-placeholder" disabled selected>{{placeholder}}</option>
+  {{else}}
+    <option value="{{defaultChoice}}" selected="selected">{{defaultChoice}}</option>
+  {{/if}}
   {{#each remainingChoices as |choice|}}
     <option value="{{choice}}">{{choice}}</option>
   {{/each}}
