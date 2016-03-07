@@ -3,6 +3,7 @@ import Ember from "ember";
 export default Ember.Service.extend({
 
   isValid: function(form) {
+    form.forEach((fieldObj) => { this._validate(fieldObj, this.formData(form)); });
     if (form.every(this._fieldValid)) { return true; }
     return false;
   },

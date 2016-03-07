@@ -7,21 +7,27 @@ module("Form Validator Service Tests", { });
 test("isValid returns true when all fields are validated and do not have errors", function(assert) {
   let validator = new formValidator();
   let form = Ember.A([
-    {_id: "a", regex: /^$/, validated: true, hasError: false},
-    {_id: "b", regex: /^$/, validated: true, hasError: false}
+    {_id: "a", value: "", regex: /^$/, validated: true, hasError: false},
+    {_id: "b", value: "", regex: /^$/, validated: true, hasError: false}
   ]);
   assert.ok(validator.isValid(form));
 });
 
-test("isValid returns false under expected conditions", function(assert) {
+test("isValid returns true when all fields are not validated but no errors exist", function(assert) {
   let validator = new formValidator();
   let form = Ember.A([
-    {_id: "a", regex: /^$/, validated: false, hasError: false},
-    {_id: "b", regex: /^$/, validated: true, hasError: false}
+    {_id: "a", value: "", regex: /^$/, validated: false, hasError: false},
+    {_id: "b", value: "b", regex: /^b$/, validated: true, hasError: false}
   ]);
-  assert.ok(!validator.isValid(form));
-  form[0].validated = true;
-  form[0].hasError = true;
+  assert.ok(validator.isValid(form));
+});
+
+test("isValid returns falls when fields are not valid", function(assert) {
+  let validator = new formValidator();
+  let form = Ember.A([
+    {_id: "a", value: "Z", regex: /^$/, validated: true, hasError: true},
+    {_id: "b", value: "b", regex: /^b$/, validated: true, hasError: false}
+  ]);
   assert.ok(!validator.isValid(form));
 });
 
