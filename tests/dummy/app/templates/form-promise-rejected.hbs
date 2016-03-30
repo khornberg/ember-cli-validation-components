@@ -1,0 +1,10 @@
+<form>
+  <div>
+    How is easy is this?
+    {{#validated-select _id="promise-rejected" formFields=formFields contentPosition="after" placeholder="Please tell us"}}
+      <div id="wrong-choice">I don't believe you'</div>
+    {{/validated-select}}
+  </div>
+
+  <button type="submit" id="submit-form" {{action "submit"}}>Submit</button>
+</form>
