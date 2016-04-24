@@ -1,0 +1,8 @@
+<div>
+  Select favorite colors
+  {{#validated-multi-select _id="colors" formFields=formFields contentPosition="after"}}
+    <div id="colorError">You have bad taste</div>
+  {{/validated-multi-select}}
+</div>
+
+<button id="submitForm" {{action "submitForm"}}>Submit Form</button>
