@@ -6,6 +6,13 @@
 </div>
 
 <div>
+  Already selected value
+  {{#validated-select _id="cardExp" formFields=formFields contentPosition="after"}}
+    <div id="cardError">Your card must expire</div>
+  {{/validated-select}}
+</div>
+
+<div>
   {{#validated-input _id="securityCode" formFields=formFields contentPosition="after" placeholder="Security Code"}}
     <div id="codeError">Invalid security code</div>
   {{/validated-input}}

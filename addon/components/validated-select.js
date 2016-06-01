@@ -24,8 +24,13 @@ export default Ember.Component.extend(validatedBase, {
   }),
 
   remainingChoices: Ember.computed(function() {
-    if (this.get('placeholder')) { return Ember.A(this.get("fieldObj").choices); }
-    return Ember.A(this.get("fieldObj").choices.slice(1, 100));
+    if (this.get('placeholder')) { return Ember.A(this.get('fieldObj').choices); }
+    if (this.get('fieldObj').value) {
+      var index = this.get('fieldObj').choices.indexOf(this.get('fieldObj').value);
+      this.get('fieldObj').choices.splice(index, 1);
+      return Ember.A(this.get('fieldObj').choices.slice(0, 100));
+    }
+    return Ember.A(this.get('fieldObj').choices.slice(1, 100));
   }),
 
   change: function(e) {

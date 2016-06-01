@@ -5,7 +5,8 @@ export default Ember.Controller.extend({
   formFields: Ember.computed(function() {
     return Ember.A([
       {_id: "securityCode" , regex: /^\d{3,4}$/    , valFunction: this.get("codeCheck")},
-      {_id: "cardType"     , regex: /Amex|Discover/, choices: Ember.A(["----", "Amex", "Discover"])}
+      {_id: "cardType"     , regex: /Amex|Discover/, choices: Ember.A(["----", "Amex", "Discover"])},
+      {_id: "cardExp"      , regex: /^\d{2}\/\d{2}$/, choices: Ember.A(["08/16", "09/16", "10/16"]), value: "10/16"}
     ]);
   }),
 
